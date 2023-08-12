@@ -24,7 +24,7 @@ To create a store, use the `createStore` function from the **tinystate**
 library. You'll need to provide an initial state for your store:
 
 ```javascript
-import { createStore } from "tinystate";
+import { createStore } from "tinystate-react";
 
 const countStore = createStore({ initialState: 0 });
 ```
@@ -35,7 +35,7 @@ After creating a store, you can create a custom hook to access and manage the
 state within your React components:
 
 ```javascript
-import { createUseStore } from "tinystate";
+import { createUseStore } from "tinystate-react";
 
 export const useCountStore = createUseStore(countStore);
 ```
