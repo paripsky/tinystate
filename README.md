@@ -11,9 +11,9 @@ project and start managing your application's state effortlessly.
 You can install **tinystate** using npm or yarn:
 
 ```bash
-npm install tinystate
+npm install tinystate-react
 # or
-yarn add tinystate
+yarn add tinystate-react
 ```
 
 ## Usage
