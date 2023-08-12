@@ -1,0 +1,105 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: .5rem auto;
+  padding: 0 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #282c36;
+  color: #c0c5ce;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #1d2128;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #61dafb;
+}
+
+nav {
+  background-color: #1d2128;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: .5rem;
+}
+
+nav li {
+  margin-bottom: 0.5rem;
+}
+
+nav a {
+  color: #c0c5ce;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #61dafb;
+}
+
+main {
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+pre {
+  background-color: #1d2128;
+  color: #c0c5ce;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+}
+
+button {
+  background-color: #61dafb;
+  color: #282c36;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3f8fba;
+}

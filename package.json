@@ -1,0 +1,41 @@
+{
+  "name": "tinystate",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "email": "paripsky@gmail.com",
+    "name": "paripsky",
+    "url": "https://paripsky.github.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paripsky/tinystate.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "files": [
+    "dist",
+    "distTypes"
+  ],
+  "main": "./dist/tinystate.umd.cjs",
+  "module": "./dist/tinystate.js",
+  "exports": {
+    ".": {
+      "import": "./dist/tinystate.js",
+      "require": "./dist/tinystate.umd.cjs"
+    }
+  },
+  "types": "./distTypes/index.d.ts",
+  "devDependencies": {
+    "@types/react": "^18.2.20",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}
