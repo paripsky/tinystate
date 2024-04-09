@@ -2,11 +2,7 @@ import { useSyncExternalStore } from 'react';
 
 export type Listener = () => void;
 
-export type CreateStoreOptions<T> = {
-  initialState: T;
-};
-
-export function createStore<T>({ initialState }: CreateStoreOptions<T>) {
+function createStore<T>({ initialState }: { initialState: T }) {
   let subscribers: Listener[] = [];
   let state = initialState;
 
@@ -18,7 +14,7 @@ export function createStore<T>({ initialState }: CreateStoreOptions<T>) {
     subscribe(fn: Listener) {
       subscribers.push(fn);
       return () => {
-        subscribers = subscribers.filter((l) => l !== fn);
+        subscribers = subscribers.filter((listener) => listener !== fn);
       };
     },
     getSnapshot() {
@@ -31,10 +27,7 @@ export function createStore<T>({ initialState }: CreateStoreOptions<T>) {
   };
 }
 
-export type Store<T> = ReturnType<typeof createStore<T>>;
-
-export function createUseStore<T>(store: Store<T>) {
-  return () => {
-    return [useSyncExternalStore(store.subscribe, store.getSnapshot), store.setState] as const;
-  };
+export function createUseStore<T>(initialState: T) {
+  const store = createStore({ initialState });
+  return () => [useSyncExternalStore(store.subscribe, store.getSnapshot), store.setState] as const;
 }
