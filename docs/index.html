@@ -26,36 +26,26 @@
       <p>You can install <strong>tinystate</strong> using npm or yarn:</p>
       <pre><code>npm install tinystate-react
 # or
-yarn add tinystate-react</code></pre>
+yarn add tinystate-react
+# or
+pnpm add tinystate-react</code></pre>
     </section>
 
     <section id="usage">
       <h2>Usage</h2>
       <p>To create a store, use the <code>createStore</code> function from the <strong>tinystate</strong> library.
         You'll need to provide an initial state for your store:</p>
-      <pre><code>// Import necessary functions
-import { createStore, createUseStore } from 'tinystate-react';
-
-// Create a store
-const countStore = createStore({ initialState: 0 });
+      <pre><code>import { createUseStore } from 'tinystate-react';
 
 // Create a custom hook to use the store
-export const useCountStore = createUseStore(countStore);</code></pre>
-      <p>After creating a store, you can use the <code>useCountStore</code> hook in your components to access and update
+export const useCountStore = createUseStore(0);</code></pre>
+      <p>You can now use the <code>useCountStore</code> hook in your components to access and update
         the state.</p>
     </section>
 
     <section id="api-reference">
       <h2>API Reference</h2>
-      <p>The following methods are available for managing the state in your store:</p>
-      <pre><code>// Subscribe a listener to state changes
-subscribe(fn: Listener): () =&gt; void;
-
-// Get the current snapshot of the state
-getSnapshot(): T;
-
-// Update the state and notify subscribers
-setState(newState: T): void;</code></pre>
+      <pre><code>createUseStore: (initialState: T) => () => [state: T, setState: ((newState: T) => void)];</code></pre>
     </section>
 
     <section id="license">
